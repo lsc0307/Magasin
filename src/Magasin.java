@@ -5,6 +5,10 @@
 * 		la compilation
 */
 public class Magasin{
+	private String nom_mag;
+	private int pMaxCapacite;
+	Produit [] produits;
+	private int nb_prods;
 	
 	/** DÉCLAREZ LES VARIABLES MEMBRES ICI **/
 	
@@ -16,6 +20,8 @@ public class Magasin{
 	*/
 	public Magasin(String pNom, int pMaxCapacite){
 		//A FAIRE
+		this.nom_mag = pNom;
+		this.pMaxCapacite = pMaxCapacite;
 	}
 	
 	/**
