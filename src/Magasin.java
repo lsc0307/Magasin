@@ -7,8 +7,8 @@
 public class Magasin{
 	private String nom_mag;
 	private int pMaxCapacite;
-	Produit [] produits;
 	private int nb_prods;
+	Produit [] produits_tab;
 	
 	/** DÉCLAREZ LES VARIABLES MEMBRES ICI **/
 	
@@ -22,6 +22,8 @@ public class Magasin{
 		//A FAIRE
 		this.nom_mag = pNom;
 		this.pMaxCapacite = pMaxCapacite;
+		produits_tab = new Produit[pMaxCapacite];
+
 	}
 	
 	/**
@@ -31,7 +33,7 @@ public class Magasin{
 	*/
 	public String toString(){
 		//A FAIRE
-		return "Nom magasin : " + nom_mag + " magasin max capacite + " + pMaxCapacite + " nombre de produits : " + nb_prods + "produits du magasin :" + produits;
+		return "Nom magasin : " + nom_mag + " magasin max capacite + " + pMaxCapacite + " nombre de produits : " + nb_prods + "produits du magasin :" + produits_tab;
 	}
 	/**
 	* Fonction permettant de trouver l'index d'un produit dans le tableau de produit du magasin. 
@@ -44,6 +46,11 @@ public class Magasin{
 	*/
 	public int trouverProduit(int pId){
 		//A FAIRE
+		for(int i=0;i < produits_tab.length;i++){
+			if(produits_tab[i].getNum_id() == pId){
+				return i;
+			}
+		}
 		return -1;
 	}
 	/**
