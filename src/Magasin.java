@@ -31,7 +31,7 @@ public class Magasin{
 	*/
 	public String toString(){
 		//A FAIRE
-		return "";
+		return "Nom magasin : " + nom_mag + " magasin max capacite + " + pMaxCapacite + " nombre de produits : " + nb_prods + "produits du magasin :" + produits;
 	}
 	/**
 	* Fonction permettant de trouver l'index d'un produit dans le tableau de produit du magasin. 
