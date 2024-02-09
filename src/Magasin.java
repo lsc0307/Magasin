@@ -63,7 +63,16 @@ public class Magasin{
 	*/
 	public String getNomProduit(int id){
 		//A FAIRE
-		return "";
+		String nom_du_prod="";
+		if(trouverProduit(id) == -1){
+			return "";
+		}
+		for(int i=0;i<produits_tab.length;i++){
+			if(produits_tab[i].getNum_id() == id){
+				nom_du_prod = produits_tab[i].getN_prod();
+			}
+		}
+		return nom_du_prod;
 	}
 	
 	/**
