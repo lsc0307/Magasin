@@ -79,6 +79,17 @@ public class Magasin{
 	*/
 	public boolean ajouterProduit(String pNom, float pPrix, int pId){
 		//A FAIRE
+		if(trouverProduit(pId) == -1){
+			System.out.println("Le produit se trouve deja dans le magasin(Produit pas ajouté)");
+			return false;
+		}
+		if (nb_prods >= pMaxCapacite) {
+			System.out.println("Le magasin est plein, impossible d'ajouter un nouveau produit.");
+			return false;
+		}
+		produits_tab[nb_prods] = new Produit(pNom,pPrix,pId);
+		nb_prods++;
+		System.out.println("Produit " + pNom + " ajouté");
 		return true;
 	}
 	
