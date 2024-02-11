@@ -33,7 +33,12 @@ public class Magasin{
 	*/
 	public String toString(){
 		//A FAIRE
-		return "Nom magasin : " + nom_mag + " magasin max capacite + " + pMaxCapacite + " nombre de produits : " + nb_prods + "produits du magasin :" + produits_tab;
+		String stringARetourner = "Nom magasin : " + nom_mag + "\n magasin max capacite : " + pMaxCapacite + "\n nombre de produits : " + nb_prods + "\n produits du magasin :";
+
+		for (int i = 0; i < nb_prods; i++) {
+		   stringARetourner	+= (produits_tab[i].toString() + "\n");
+		}
+		return stringARetourner;
 	}
 	/**
 	* Fonction permettant de trouver l'index d'un produit dans le tableau de produit du magasin. 
@@ -47,7 +52,7 @@ public class Magasin{
 	public int trouverProduit(int pId){
 		//A FAIRE
 		for(int i=0;i < produits_tab.length;i++){
-			if(produits_tab[i].getNum_id() == pId){
+			if(produits_tab[i] != null && produits_tab[i].getNum_id() == pId){
 				return i;
 			}
 		}
@@ -68,7 +73,7 @@ public class Magasin{
 			return "";
 		}
 		for(int i=0;i<produits_tab.length;i++){
-			if(produits_tab[i].getNum_id() == id){
+			if(produits_tab[i] != null && produits_tab[i].getNum_id() == id ){
 				nom_du_prod = produits_tab[i].getN_prod();
 			}
 		}
@@ -88,7 +93,7 @@ public class Magasin{
 	*/
 	public boolean ajouterProduit(String pNom, float pPrix, int pId){
 		//A FAIRE
-		if(trouverProduit(pId) == -1){
+		if(trouverProduit(pId) != -1){
 			System.out.println("Le produit se trouve deja dans le magasin(Produit pas ajouté)");
 			return false;
 		}

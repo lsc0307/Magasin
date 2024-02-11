@@ -24,7 +24,7 @@
         }
 
         public String toString(){
-            return "Nom produit : " + n_prod + "prix du produit : " + prix_prod + "Numero identifiant du produit : " + num_id;
+            return "\n Nom produit : " + n_prod + " Prix du produit : " + prix_prod + " Numero identifiant du produit : " + num_id;
         }
     }
 
