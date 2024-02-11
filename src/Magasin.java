@@ -110,8 +110,20 @@ public class Magasin{
 	* @return boolean indique si le produit a été retiré ou non.
 	*/
 	public boolean enleverProduit(int pId){
-		//A FAIRE
-		return true;
+			int positionProd = trouverProduit(pId);
+
+			if (positionProd != -1){
+				for (int i = positionProd; i < nb_prods - 1; i++){
+					produits_tab[i] = produits_tab[i + 1];
+				}
+				nb_prods--;
+				System.out.println("Le produit avec l'ID " + pId + " à ete rétiré du magasin");
+				return true;
+			}
+			else{
+				System.out.println("Le produit avec l'ID " + pId + " n'est pas dans le magasin");
+				return false;
+			}
+		}
 	}
-	
-}
+
